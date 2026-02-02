@@ -6,18 +6,15 @@
   <style>
     body {
       height: 100vh;
-      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
       background: #ffe6ea;
-      overflow: hidden;
     }
 
     .box {
       text-align: center;
-      position: relative;
     }
 
     h1 {
@@ -50,31 +47,31 @@
 
   <div class="box">
     <h1>Do you want to be my Valentine? ❤️</h1>
-    <button id="yes">Yes</button>
+    <button id="yes" onclick="yesClicked()">Yes</button>
     <button id="no">No</button>
   </div>
 
   <script>
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
 
-    function moveButton() {
-      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    }
+  function moveButton() {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
-    noBtn.addEventListener("mouseover", moveButton);
-    noBtn.addEventListener("touchstart", moveButton);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
 
-    yesBtn.addEventListener("click", () => {
-      window.location.href = "https://www.pornhub.org/";
-    });
-  </script>
+  // For desktop
+  noBtn.addEventListener("mouseover", moveButton);
 
-</body>
-</html>
+  // For mobile
+  noBtn.addEventListener("touchstart", moveButton);
+
+  function yesClicked() {
+    alert("Yay! 💖 I knew you'd say yes!");
+  }
+ </script>
 
 
 </body>
